@@ -9,7 +9,7 @@
   <version>1.0.0</version>
   <packaging>jar</packaging>
 
-  <name>algo-java</name>
+  <name>MyProgrammercarlSolu4J</name>
   <description>《代码随想录》Java 刷题本地工程</description>
 
   <properties>

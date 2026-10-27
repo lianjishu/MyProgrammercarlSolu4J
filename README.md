@@ -3,7 +3,9 @@
 配套《代码随想录》PDF 教程的**本地**学习工程：每道题都放在本地目录下，
 带题面文档 + 待填的 `Solution` 骨架 + 本地 JUnit 判题器，**不用去力扣 OJ 提交也能自测对错**。
 
-- 教材原文：`代码随想录PDF全集V3.0/`（本仓库内已附带全部 11 章 PDF）
+- 本仓库：<https://github.com/lianjishu/MyProgrammercarlSolu4J>
+- 教材原文：`代码随想录PDF全集V3.0/`（11 章 PDF，约 53 MB）
+  —— **不在本仓库内**，位置见下方「教材 PDF 位置」
 - 官方题解参考：<https://github.com/youngyangyang04/leetcode-master>
 
 ---
@@ -11,7 +13,7 @@
 ## 快速开始
 
 ```bash
-cd E:\Projects\learning\ds-algo\Programmercarl\algo-java
+cd MyProgrammercarlSolu4J
 
 # 编译 + 跑全部测试（必须带 -o，见下方「环境说明」）
 mvn -o clean test
@@ -19,9 +21,12 @@ mvn -o clean test
 # 只跑某一题
 mvn -o test "-Dtest=ch01_array._3_remove_element_lc0027.SolutionTest"
 
-# 打包
-mvn -o package
+# 打包（骨架还没实现时测试必然报 TODO，要跳过测试才能打包）
+mvn -o package -DskipTests
 ```
+
+> 克隆下来后目录名就是 `MyProgrammercarlSolu4J`，先进到该目录再执行 Maven 命令
+> （`pom.xml` 在这个目录里，在别处执行会报 `there is no POM in this directory`）。
 
 > **首次运行前请把 `mvn` 加上 `-o`（离线模式）。** 本机网络无法连接 Maven 中央仓库，
 > 不加 `-o` 会卡在依赖下载上。依赖和插件都已缓存在本地仓库里，离线直接可用。
@@ -56,7 +61,7 @@ mvn -o package
 ## 目录约定
 
 ```
-algo-java/
+MyProgrammercarlSolu4J/
 ├── pom.xml                       # Maven 工程（UTF-8，JUnit 5.10.5）
 ├── .mvn/jvm.config               # 固定 UTF-8，避免控制台中文乱码
 └── src/
@@ -138,9 +143,27 @@ algo-java/
 
 ---
 
+## 教材 PDF 位置
+
+PDF **不在本仓库里**（53 MB，11 章，交给 Git 托管不合适），放在本仓库的**上级目录**：
+
+```
+Programmercarl\
+├── 代码随想录PDF全集V3.0\        ← 教材 PDF 在这里（与本仓库同级）
+│   ├── 0.《代码随想录》PDF说明V3.0.pdf
+│   ├── 1.《代码随想录》数组（V3.0）.pdf
+│   ├── ...
+│   └── 11.《代码随想录》单调栈（V3.0）.pdf
+└── MyProgrammercarlSolu4J\        ← 本仓库
+```
+
+克隆到别的机器后，PDF 需要**单独拷一份**放到仓库同级目录，或改成本地任意路径自己对照。
+
+---
+
 ## 题目来源
 
 - **题面**：<https://leetcode.cn/problems/remove-element/> 等力扣原题页
 - **思路与参考代码**：《代码随想录》官方题解
   <https://github.com/youngyangyang04/leetcode-master/tree/master/problems>
-- **配套 PDF**：`代码随想录PDF全集V3.0/`
+- **配套 PDF**：`../代码随想录PDF全集V3.0/`（不在本仓库内，见「教材 PDF 位置」）
